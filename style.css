@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg,
+        #ffc1dc, #d9b8ff, #ffdaea);
+    font-family: Georgia, serif;
+    text-align: center;
+    color: #8d3675;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 45px 20px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px white;
+}
+
+h2 {
+    margin: 15px;
+}
+
+.intro {
+    margin: 20px;
+    font-size: 18px;
+}
+
+.cake {
+    font-size: 100px;
+    margin: 20px;
+    animation: bounce 2s infinite;
+}
+
+.gift {
+    width: 150px;
+    height: 130px;
+    margin: 35px auto;
+    position: relative;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.gift:hover {
+    transform: scale(1.1);
+}
+
+.gift-box {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    bottom: 0;
+    background: #ff4f9a;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px #9d477c55;
+}
+
+.gift-box::after {
+    content: "";
+    position: absolute;
+    left: 60px;
+    width: 30px;
+    height: 100%;
+    background: #ffe0a3;
+}
+
+.gift-lid {
+    position: absolute;
+    width: 170px;
+    height: 30px;
+    left: -10px;
+    top: 0;
+    background: #e72e82;
+    border-radius: 8px;
+    z-index: 2;
+    transition: transform .8s;
+}
+
+.ribbon {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    border: 8px solid #ffe0a3;
+    border-radius: 50%;
+    left: 55px;
+    top: -20px;
+    z-index: 3;
+}
+
+.gift.open .gift-lid {
+    transform: translateY(-65px) rotate(-20deg);
+}
+
+.message {
+    display: none;
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 25px;
+    background: #ffffffc9;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px #b44a8b44;
+    animation: appear 1s;
+}
+
+.message p {
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+button {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: #e83e91;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    margin: 20px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #a83fba;
+    transform: scale(1.08);
+}
+
+.hint {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: float 5s linear forwards;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
